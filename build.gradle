@@ -13,3 +13,11 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.5'
     testCompile 'junit:junit:4.+'
 }
+task(hello) << {
+    println "hello"
+}
+
+task(copy, type: Copy) {
+    from(file('srcDir'))
+    into(buildDir)
+}
