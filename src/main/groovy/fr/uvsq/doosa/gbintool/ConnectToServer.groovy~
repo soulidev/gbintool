@@ -1,0 +1,10 @@
+
+     def cli = new CliBuilder(usage:'ls')
+     cli.a('display all files')
+     cli.l('use a long listing format')
+     cli.t('sort by modification time')
+     def options = cli.parse(args)
+     assert options // would be null (false) on failure
+     assert options.arguments() == ['*.groovy']
+     assert options.a && options.l && options.t
+     
